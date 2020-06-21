@@ -36,4 +36,5 @@ def dp_algo():
         return ans
 
 
-    print('min weight:', tsp(1, 0))
+    print('weight:', tsp(1, 0))
+
