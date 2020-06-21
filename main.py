@@ -1,6 +1,7 @@
 from onehalfopt import *
 from BNB import *
 from dptsp import *
+from genetic import *
 import time
 
 
@@ -22,8 +23,14 @@ print("\ntime taken for bound and branch: ",end - start)
 #1.5 opt algorithm
 print("\n1.5 opt algorithm: \n\n")
 start = time.process_time()
-onehalf([[0, 0],[3, 0],[6, 0],[0, 3],[3, 3],[6, 3],[0, 6],[3, 6],[6, 6],])
+one_and_half_algo()
 end = time.process_time()
 print("time taken for 1.5 approximation algorithm: ",end - start)
 
 
+#genetic algorithm
+print("\ngenetic algorithm: \n\n")
+start = time.process_time()
+genetic()
+end = time.process_time()
+print("time taken for 1.5 approximation algorithm: ",end - start)

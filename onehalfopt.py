@@ -105,7 +105,7 @@ def minimum_weight_matching(MST, G, odd_vert):
 
 
 def eulerian_tour(MatchedMSTree, G):
-    # find neigbours
+    
     next_vertex = {}
     for edge in MatchedMSTree:
         if edge[0] not in next_vertex:
@@ -152,29 +152,23 @@ def hamiltonian(MatchedMST, v1, v2):
 
 def onehalf(data):
     # build a graph
-
     G = build_graph(data)
-    
     # print("Graph: ", G)
     
     # build a minimum spanning tree
     MSTree = mst(G)
-
     # print("MST: ", MSTree)
 
     # find odd degree
     odd = odd_degree(MSTree)
-
     #print("Vertices having odd degree ", odd)
 
     # add minimum weight matching edges to MST
     minimum_weight_matching(MSTree, G, odd)
-
     #print("Minimum weight matching: ", MSTree)
 
     # find an eulerian tour
     tour = eulerian_tour(MSTree, G)
-
     #print("Eulerian tour: ", tour)
 
     current = tour[0]
@@ -195,12 +189,13 @@ def onehalf(data):
     path.append(path[0])
     
     print("Result path: ", path)
-    print("Result length of the path: ", length)
+    print("Result cost of the path: ", length)
     
 
     return length, path
 
 # start = time.clock()
+#check if this satifies triangular propertly later and verify it with yashs code
 # onehalf([[1380, 939], [2848, 96], [3510, 1671], [457, 334], [3888, 666], [984, 965], [2721, 1482], [1286, 525],
 #              [2716, 1432], [738, 1325], [1251, 1832], [2728, 1698], [3815, 169], [3683, 1533], [1247, 1945], [123, 862],
 #              [1234, 1946], [252, 1240], [611, 673], [2576, 1676], [928, 1700], [53, 857], [1807, 1711], [274, 1420],
@@ -221,20 +216,10 @@ def onehalf(data):
 # onehalf([[1, 1], [2, 5], [8, 0]])
 
 #
-# onehalf([
-#     [0, 0],
-#     [3, 0],
-#     [6, 0],
+def one_and_half_algo():
+    onehalf([[0, 0],[3, 0],[6, 0],[0, 3],[3, 3],[6, 3],[0, 6],[3, 6],[6, 6],])
 
-#     [0, 3],
-#     [3, 3],
-#     [6, 3],
-
-#     [0, 6],
-#     [3, 6],
-#     [6, 6],
-
-# ])
+#yashs greedy data
 # onehalf([[60,100],[180,200],[80,180],[140,180],[20,160],[100,160],
 #     [200,160],[140,140],[40,120],[100,120],[180,100],[60,80],
 #     [120,80],[180,60],[20,40],[100,40],[200,40],[20,20],[60,20],
