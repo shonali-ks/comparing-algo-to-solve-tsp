@@ -10,7 +10,7 @@ import time
 #naive algo
 print("\nNaive algorithm: \n\n")
 start = time.process_time()
-bnb() 
+naive()
 end = time.process_time()
 print("\ntime taken for naive: ",end - start)
 
