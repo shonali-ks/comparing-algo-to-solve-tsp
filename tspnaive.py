@@ -1,7 +1,7 @@
 
 
 from sys import maxsize
-V = 4
+V = 9
 
 
 def tsp(graph, s):
@@ -72,4 +72,5 @@ def naive():
 			[ 6, 1, 7, 8, 3, 3, 4, 0, 1 ],
 			[ 9, 9, 2, 4, 2, 4, 4, 1, 0],]
     s = 0
-    print(tsp(graph, s))
+    print("Total weight :" ,tsp(graph, s))
+
